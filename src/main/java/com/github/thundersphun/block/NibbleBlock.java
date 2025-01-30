@@ -1,5 +1,6 @@
 package com.github.thundersphun.block;
 
+import com.github.thundersphun.HammerItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -300,7 +301,8 @@ public class NibbleBlock extends Block implements Waterloggable {
 
 	public static boolean playerNibbleMode(PlayerEntity player) {
 		ItemStack hand = player.getStackInHand(player.getActiveHand());
-		return (player.isCreative() && hand.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof NibbleBlock);
+		return hand.getItem() instanceof HammerItem ||
+				(player.isCreative() && hand.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof NibbleBlock);
 	}
 
 	public static BooleanProperty getPlaceHitNibble(Vec3d pos, Direction face) {

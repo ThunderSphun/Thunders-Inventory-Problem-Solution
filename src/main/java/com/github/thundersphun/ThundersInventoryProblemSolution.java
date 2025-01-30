@@ -10,6 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraft.registry.*;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +32,19 @@ public class ThundersInventoryProblemSolution implements ModInitializer {
 					.useBlockPrefixedTranslationKey()
 					.registryKey(RegistryKey.of(RegistryKeys.ITEM, id("stone_nibble"))));
 
+	public static final HammerItem WOODEN_HAMMER = new HammerItem(
+			new ToolMaterial(
+					ToolMaterial.WOOD.incorrectBlocksForDrops(),
+					ToolMaterial.WOOD.durability() * 4,
+					ToolMaterial.WOOD.speed(),
+					ToolMaterial.WOOD.attackDamageBonus(),
+					ToolMaterial.WOOD.enchantmentValue(),
+					ToolMaterial.WOOD.repairItems()),
+			BlockTags.PICKAXE_MINEABLE,
+			7f,
+			-3.2f,
+			new Item.Settings()
+					.registryKey(RegistryKey.of(RegistryKeys.ITEM, id("wooden_hammer"))));
 
 	public static final Map<Block, NibbleBlock> BLOCK_TO_NIBBLE = Map.of(Blocks.STONE, STONE_NIBBLE);
 
@@ -39,7 +53,10 @@ public class ThundersInventoryProblemSolution implements ModInitializer {
 		Registry.register(Registries.BLOCK, id("stone_nibble"), STONE_NIBBLE);
 		Registry.register(Registries.ITEM, id("stone_nibble"), STONE_NIBBLE_ITEM);
 
+		Registry.register(Registries.ITEM, id("wooden_hammer"), WOODEN_HAMMER);
+
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(e -> e.addAfter(Items.STONE, STONE_NIBBLE_ITEM));
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(e -> e.addAfter(Items.WOODEN_HOE, WOODEN_HAMMER));
 
 		PlayerBlockBreakEvents.BEFORE.register((world, player, pos, state, blockEntity) -> {
 			if (NibbleBlock.playerNibbleMode(player)) {
