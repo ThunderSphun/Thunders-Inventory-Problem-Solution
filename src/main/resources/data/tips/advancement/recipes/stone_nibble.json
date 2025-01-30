@@ -1,0 +1,19 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_nibble": {
+			"conditions": {
+				"items": [{"items": "tips:stone_nibble"}]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"has_the_recipe": {
+			"conditions": {"recipe": "tips:stone_from_nibble"},
+			"trigger": "minecraft:recipe_unlocked"
+		}
+	},
+	"requirements": [["has_the_recipe", "has_nibble"]],
+	"rewards": {
+		"recipes": ["tips:stone_from_nibble"]
+	}
+}

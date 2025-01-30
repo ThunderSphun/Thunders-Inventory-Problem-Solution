@@ -1,0 +1,6 @@
+{
+	"parent": "tips:nibble/nibble_item",
+	"textures": {
+		"all": "minecraft:block/stone"
+	}
+}

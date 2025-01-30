@@ -1,0 +1,6 @@
+{
+	"parent": "tips:nibble/nibble_east_down_north",
+	"textures": {
+		"all": "minecraft:block/stone"
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "tips",
+	"version": "${version}",
+	"name": "Thunders Inventory Problem Solution",
+	"description": "A mod that aims to solve the minecraft inventory problem, at least according to me",
+	"authors": [
+		"ThunderSphun"
+	],
+	"license": "CC0-1.0",
+	"icon": "assets/tips/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.github.thundersphun.ThundersInventoryProblemSolution"
+		],
+		"client": [
+			"com.github.thundersphun.ThundersInventoryProblemSolutionClient"
+		]
+	},
+	"mixins": [
+		"tips.mixins.json",
+		{
+			"config": "tips.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

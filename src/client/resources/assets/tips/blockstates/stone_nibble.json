@@ -1,0 +1,29 @@
+{
+	"multipart": [
+		{
+			"apply": {"model": "tips:stone_nibble_west_down_north"},
+			"when": {"west_down_north": "true"}
+		}, {
+			"apply": {"model": "tips:stone_nibble_west_down_south"},
+			"when": {"west_down_south": "true"}
+		}, {
+			"apply": {"model": "tips:stone_nibble_west_up_north"},
+			"when": {"west_up_north": "true"}
+		}, {
+			"apply": {"model": "tips:stone_nibble_west_up_south"},
+			"when": {"west_up_south": "true"}
+		}, {
+			"apply": {"model": "tips:stone_nibble_east_down_north"},
+			"when": {"east_down_north": "true"}
+		}, {
+			"apply": {"model": "tips:stone_nibble_east_down_south"},
+			"when": {"east_down_south": "true"}
+		}, {
+			"apply": {"model": "tips:stone_nibble_east_up_north"},
+			"when": {"east_up_north": "true"}
+		}, {
+			"apply": {"model": "tips:stone_nibble_east_up_south"},
+			"when": {"east_up_south": "true"}
+		}
+	]
+}

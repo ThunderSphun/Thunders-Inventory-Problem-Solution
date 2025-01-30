@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "building",
+	"ingredients": [
+		"tips:stone_nibble",
+		"tips:stone_nibble",
+		"tips:stone_nibble",
+		"tips:stone_nibble",
+		"tips:stone_nibble",
+		"tips:stone_nibble",
+		"tips:stone_nibble",
+		"tips:stone_nibble"
+	],
+	"result": {
+		"count": 1,
+		"id": "minecraft:stone"
+	}
+}
